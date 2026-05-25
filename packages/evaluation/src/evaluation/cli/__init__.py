@@ -30,6 +30,7 @@ def eval(
             window_size = sliding_window_size,
             horizon     = sliding_horizon,
         ),
+        model_config=config_manager._get_model_config(model),
     )
     
     evaluation = Evaluation(config=config)
