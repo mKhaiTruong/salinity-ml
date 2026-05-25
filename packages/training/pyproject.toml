@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "salinity-training"
+version = "0.1.0"
+dependencies = [
+    "salinity-core",
+    "mlflow",
+    "onnxmltools",
+    "skl2onnx",
+    "typer",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["training*"]

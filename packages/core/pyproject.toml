@@ -12,12 +12,11 @@ dependencies = [
     "joblib",
     "numpy",
     "pandas",
-    "scipy",
     "boto3",
-    "fastapi",
-    "uvicorn",
-    "prometheus-client",
-    "httpx",
+    "scikit-learn",
+    "torch",
+    "onnxruntime-gpu",
+    "xgboost",
     "python-dotenv",
 ]
 
