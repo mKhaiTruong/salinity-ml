@@ -1,0 +1,11 @@
+artifacts_root: artifacts
+
+transformation_config:
+  root_dir: artifacts/transformation
+
+training_config:
+  root_dir: artifacts/training
+  encoders_dir: artifacts/encoders
+
+evaluation_config:
+  root_dir: artifacts/evaluation

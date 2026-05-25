@@ -1,17 +1,30 @@
 training_params:
   metric_mode: "max"
-  loss_function: []
+  model_name: 'lstm'
+  sliding_window_size: 6
+  sliding_horizon: 1
 
-  lr: 0.0001
-  batch_size: 4
-  decay: 0.0005
-  patience: 5
-  start_epoch: 0
-  epochs: 21
-  workers: 4
-  seed: 42
-  image_size: 512
-  is_augmentation: True
-  lr_scheduler: "OneCycleLR"
-  alpha: 0.25
-  gamma: 2.0
+xgboost:
+  n_estimators: 100
+  max_depth: 6
+  learning_rate: 0.1
+  subsample: 0.8
+
+lstm:
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.2
+  epochs: 50
+  batch_size: 8
+  learning_rate: 0.001
+  patience: 10
+
+iTransformer:
+  hidden_size: 64
+  epochs: 50
+  batch_size: 8
+  learning_rate: 0.001
+  patience: 10
+
+evaluation_params:
+  batch_size: 8

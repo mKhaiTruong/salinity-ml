@@ -1,1 +1,12 @@
 kaggle
+pandas
+numpy
+scikit-learn
+xgboost
+python-box
+mlflow
+torch==2.7.0+cu128
+torchvision==0.22.0+cu128
+onnxmltools 
+skl2onnx
+onnxruntime-gpu

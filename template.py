@@ -11,8 +11,7 @@ list_of_files = [
     # ------------- NOTEBOOKS ----------------------------
     f"notebooks/01_eda.ipynb",
     f"notebooks/02_training.ipynb",
-    f"notebooks/03_export.ipynb",
-    f"notebooks/04_evaluation.ipynb",
+    f"notebooks/03_evaluation.ipynb",
     
     # ------------- MICROSERVICES ----------------------------
     f"packages/core/pyproject.toml",  
