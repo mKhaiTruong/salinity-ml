@@ -62,6 +62,8 @@ class Evaluation:
             return json.load(f)
         
     def _load_strategy(self):
+        from core.models.configs import ModelConfig
+        
         name = self.config.model.model_name
         metadata = self._load_metadata()
         
