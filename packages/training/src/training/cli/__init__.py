@@ -1,6 +1,7 @@
-import typer
+import typer, yaml
 from dotenv import load_dotenv
 from core.logging import logger
+from core.constants import PARAMS_FILE_PATH
 
 load_dotenv()
 app = typer.Typer()
@@ -18,20 +19,19 @@ def train(
     import mlflow
     
     setup_mlflow()
+    
+    with open(PARAMS_FILE_PATH, "r") as f:
+        params = yaml.safe_load(f)
+    
+    params["training_params"]["model_name"] = model
+    params["training_params"]["sliding_window_size"] = sliding_window_size
+    params["training_params"]["sliding_horizon"] = sliding_horizon
+
+    with open(PARAMS_FILE_PATH, "w") as f:
+        yaml.dump(params, f)
 
     config_manager = ConfigurationManager()
     config         = config_manager.get_training_config()
-
-    config = replace(
-        config,
-        model = replace(
-            config.model, 
-            model_name  = model,
-            window_size = sliding_window_size,
-            horizon     = sliding_horizon,
-        ),
-        model_config=config_manager._get_model_config(model),
-    )
     
     training = Training(config=config)
     with mlflow.start_run(run_name=model):
