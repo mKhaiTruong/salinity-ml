@@ -146,6 +146,7 @@ class iTransformerStrategy(BaseModelStrategy):
             self.model,
             dummy_input,
             path / "model.onnx",
+            dynamo       = False,
             input_names  = ["input"],
             output_names = ["output"],
             dynamic_axes = {
